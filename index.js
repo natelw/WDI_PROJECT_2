@@ -14,25 +14,13 @@ const errorHandler = require('./lib/errorHandler');
 const app = express();
 const { port, dbUri, sessionSecret } = require('./config/environment');
 
-
-//----
-const User = require('./models/user');
-// User.collection.drop();
-// User
-//   .create({
-//     firstName: 'Nate',
-//     lastName: 'Welfare',
-//     email: 'nate@nate.com',
-//     userName: 'nafter'
-//   }, (err, user) => {
-//     if (err) return console.log(err);
-//     return console.log('User was created!', user);
-//   });
-//-------
-User.find((err, users) => {
-  if (err) return console.log(err);
-  return console.log(users);
-});
+//
+// const User = require('./models/user');
+//
+// User.find((err, users) => {
+//   if (err) return console.log(err);
+//   return console.log(users);
+// });
 
 
 mongoose.Promise = require('bluebird');
@@ -40,6 +28,9 @@ mongoose.connect(dbUri, { useMongoClient: true });
 
 app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
+
+
+
 
 app.use(expressLayouts);
 app.use(express.static(`${__dirname}/public`));
