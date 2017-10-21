@@ -14,6 +14,22 @@ const errorHandler = require('./lib/errorHandler');
 const app = express();
 const { port, dbUri, sessionSecret } = require('./config/environment');
 
+
+//----
+const User = require('./models/user');
+
+const person = new User({
+  firstName: 'Nate',
+  lastName: 'Welfare',
+  email: 'nate@nate.com',
+  userName: 'nafter'
+});
+
+console.log(person);
+//-------
+
+
+
 mongoose.Promise = require('bluebird');
 mongoose.connect(dbUri, { useMongoClient: true });
 
