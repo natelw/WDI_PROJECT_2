@@ -17,17 +17,22 @@ const { port, dbUri, sessionSecret } = require('./config/environment');
 
 //----
 const User = require('./models/user');
-
-const person = new User({
-  firstName: 'Nate',
-  lastName: 'Welfare',
-  email: 'nate@nate.com',
-  userName: 'nafter'
-});
-
-console.log(person);
+// User.collection.drop();
+// User
+//   .create({
+//     firstName: 'Nate',
+//     lastName: 'Welfare',
+//     email: 'nate@nate.com',
+//     userName: 'nafter'
+//   }, (err, user) => {
+//     if (err) return console.log(err);
+//     return console.log('User was created!', user);
+//   });
 //-------
-
+User.find((err, users) => {
+  if (err) return console.log(err);
+  return console.log(users);
+});
 
 
 mongoose.Promise = require('bluebird');
