@@ -18,9 +18,13 @@ User
     lastName: 'Bloggs',
     email: 'dave@blogster.com',
     userName: 'bloggy'
-  }],(err, users) => {
-    if(err) console.log(err);
-    if(users) console.log(`${users.length} users created!`);
-
+  }])
+  .then((users) => {
+    console.log(`${users.length} computers created!`);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .finally(() => {
     mongoose.connection.close();
   });
