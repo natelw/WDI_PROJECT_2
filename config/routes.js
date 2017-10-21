@@ -13,6 +13,10 @@ router.get('/', (req, res) => res.render('homepage'));
 router.route('/register')
   .get(registration.new)
   .post(registration.create);
+
+router.route('/login')
+  .get(session.new)
+  .post(session.create);
 // INDEX
 
 // NEW

@@ -10,8 +10,9 @@ const routes = require('./config/routes');
 const customResponses = require('./lib/customResponses');
 const authentication = require('./lib/authentication');
 const errorHandler = require('./lib/errorHandler');
-
+const User = require('./models/user');
 const app = express();
+const bcrypt = require('bcrypt');
 const { port, dbUri, sessionSecret } = require('./config/environment');
 
 //
@@ -31,15 +32,51 @@ app.set('views', `${__dirname}/views`);
 
 
 
-
 app.use(expressLayouts);
 app.use(express.static(`${__dirname}/public`));
 app.use(morgan('dev'));
+
 app.use(session({
   secret: sessionSecret,
   resave: false,
   saveUninitialized: false
 }));
+
+app.use((req, res, next) => {
+  if (!req.session.userId) return next();
+
+  User
+    .findById(req.session.userId)
+    .exec()
+    .then(user=> {
+      req.session.userId = user._id;
+      res.locals.user = user;
+      res.locals.isLoggedIn = true;
+
+      next();
+    });
+});
+
+app.use((req, res, next) => {
+  if (!req.session.userId) return next();
+
+  User
+    .findById(req.session.userId)
+    .exec()
+    .then(user=> {
+      if (!user) {
+        return req.session.regenerate(() => {
+          res.redirect('/');
+        });
+      }
+      req.session.userId = user._id;
+      res.locals.user = user;
+      res.locals.isLoggedIn = true;
+
+      next();
+    });
+});
+
 app.use(flash());
 app.use(customResponses);
 app.use(bodyParser.urlencoded({ extended: true }));
