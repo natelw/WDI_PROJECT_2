@@ -8,5 +8,9 @@
       <p><%= sheet.charLevel %></p>
     </li>
     <a href="/sheets/<%= sheet.id %>/edit">Edit</a>
+    <form action="/sheets/<%= sheet.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE"/>
+  <button>Delete</button>
+</form>
   <% }); %>
 </ul>

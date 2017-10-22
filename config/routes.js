@@ -99,9 +99,24 @@ router.put('/sheets/:id', (req, res) => {
     });
 });
 
-// DELETE
-router.delete('/sheets/:id', (req, res) => res.send("DELETE"));
 
+// DELETE
+router.delete('/sheets/:id', (req, res) => {
+  Sheet
+    .findById(req.params.id)
+    .exec()
+    .then((sheet) => {
+      if(!sheet) return res.status(404).send('Not found');
+
+      return sheet.remove();
+    })
+    .then(() => {
+      res.redirect('/sheets');
+    })
+    .catch((err) => {
+      res.status(500).end(err);
+    });
+});
 
 
 module.exports = router;
