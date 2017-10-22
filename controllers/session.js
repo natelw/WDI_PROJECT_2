@@ -17,7 +17,12 @@ function sessionCreate(req, res) {
     });
 }
 
+function sessionDelete(req, res) {
+  return req.session.regenerate(() => res.redirect('/'));
+}
+
 module.exports = {
   new: sessionNew,
-  create: sessionCreate
+  create: sessionCreate,
+  delete: sessionDelete
 };

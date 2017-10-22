@@ -17,6 +17,9 @@ router.route('/register')
 router.route('/login')
   .get(session.new)
   .post(session.create);
+
+router.route('/logout')
+  .get(session.delete);
 // INDEX
 
 // NEW
