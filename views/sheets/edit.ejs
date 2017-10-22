@@ -1,1 +1,37 @@
-<h1>edit</h1>
+
+
+<h1>Edit Character Sheet</h1>
+<form method="POST" action="/sheets/<%= sheet.id %>">
+  <input type="hidden" name="_method" value="PUT">
+
+  <div>
+    <label for="charName">Character Name</label>
+    <input type="text" name="charName" id="charName" value="<%= sheet.charName %>">
+  </div>
+
+  <div>
+    <label for="charClass">Class</label>
+    <input type="text" name="charClass" id="charClass" value="<%= sheet.charClass %>">
+  </div>
+    <div>
+      <label for="charRace">Race</label>
+      <input type="text" name="charRace" id="charRace" value="<%= sheet.charRace %>">
+    </div>
+  <div>
+    <label for="charLevel">Level</label>
+    <input type="Number" name="charLevel" id="charLevel" value="<%= sheet.charLevel %>">
+  </div>
+  <div>
+    <label for="charSkills">Skills</label>
+    <textarea name="charSkills"><%= sheet.charSkills %></textarea>
+  </div>
+  <div>
+    <label for="charTraits">Traits</label>
+    <textarea name="charTraits"><%= sheet.charTraits %></textarea>
+  </div>
+  <div>
+    <label for="charEquip">Equipment</label>
+    <textarea name="charEquip"><%= sheet.charEquip %></textarea>
+  </div>
+  <button>Update</button>
+</form>

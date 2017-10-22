@@ -37,14 +37,68 @@ router.get('/sheets', (req, res) => {
 
 // NEW
 router.get('/sheets/new', (req, res) => res.render("sheets/new"));
+
 // SHOW
-router.get('/sheets/:id', (req, res) => res.render("sheets/show"));
+router.get('/sheets/:id', (req, res) => {
+  Sheet
+    .findById(req.params.id)
+    .exec()
+    .then((sheet) => {
+      if(!sheet) return res.status(404).end('Not found');
+      res.render('sheets/show', { sheet });
+    })
+    .catch((err) => {
+      res.status(500).end(err);
+    });
+});
 // CREATE
-router.post('/sheets', (req, res) => res.send("CREATE"));
+router.post('/sheets', (req, res) => {
+  Sheet
+    .create(req.body)
+    .then(() => {
+      res.redirect('/sheets');
+    })
+    .catch((err) => {
+      res.status(500).end(err);
+    });
+});
+
 // EDIT
-router.get('/sheets/:id/edit', (req, res) => res.render("sheets/edit"));
+router.get('/sheets/:id/edit', (req, res) => {
+  Sheet
+    .findById(req.params.id)
+    .exec()
+    .then((sheet) => {
+      if(!sheet) return res.status(404).end('Not found');
+      res.render('sheets/edit', { sheet });
+    })
+    .catch((err) => {
+      res.status(500).end(err);
+    });
+});
+
 // UPDATE
-router.put('/sheets/:id', (req, res) => res.send("UPDATE"));
+router.put('/sheets/:id', (req, res) => {
+  Sheet
+    .findById(req.params.id)
+    .exec()
+    .then((sheet) => {
+      if(!sheet) return res.status(404).send('Not found');
+
+      for(const field in req.body) {
+        sheet[field] = req.body[field];
+      }
+
+      return sheet.save();
+    })
+    .then((sheet) => {
+      res.redirect(`/sheets/${sheet.id}`);
+    })
+    .catch((err) => {
+      res.status(500).end(err);
+    });
+});
+
 // DELETE
 router.delete('/sheets/:id', (req, res) => res.send("DELETE"));
 
