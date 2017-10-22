@@ -1,0 +1,11 @@
+<h1>indexer</h1>
+
+<ul>
+  <% sheets.forEach((sheet) => { %>
+    <li>
+      <h3><%= sheet.charName %></h3>
+      <h4><%= sheet.charClass %></h4>
+      <p><%= sheet.charLevel %></p>
+    </li>
+  <% }); %>
+</ul>

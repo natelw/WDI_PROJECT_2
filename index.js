@@ -16,7 +16,7 @@ const bcrypt = require('bcrypt');
 const { port, dbUri, sessionSecret } = require('./config/environment');
 
 //
-// const User = require('./models/user');
+// const User = require('./models/sheet');
 //
 // User.find((err, users) => {
 //   if (err) return console.log(err);

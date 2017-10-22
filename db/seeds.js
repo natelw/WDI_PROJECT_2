@@ -27,25 +27,42 @@ User.collection.drop();
 //
 //     return
 Sheet.create([{
-      charName: 'Blath',
-      charClass: 'Ranger',
-      charLevel: 3,
-      charRace: 'Half-Elf',
-      charExp: 1600,
-      charStr: 8,
-      charDex: 9,
-      charCon: 10,
-      charInt: 11,
-      charWis: 12,
-      charCha: 13,
-      charMaxHp: 30,
-      charAc: 14,
-      charSpells: 'talk to animals',
-      charTraits: 'beastmaster',
-      charSkills: 'nature',
-      charEquip: 'longsword +1'
-
-    }])
+  charName: 'Blath',
+  charClass: 'Ranger',
+  charLevel: 3,
+  charRace: 'Half-Elf',
+  charExp: 1600,
+  charStr: 8,
+  charDex: 9,
+  charCon: 10,
+  charInt: 11,
+  charWis: 12,
+  charCha: 13,
+  charMaxHp: 30,
+  charAc: 14,
+  charSpells: 'talk to animals',
+  charTraits: 'beastmaster',
+  charSkills: 'nature',
+  charEquip: 'longsword +1'
+},{
+  charName: 'Moffat',
+  charClass: 'Druid',
+  charLevel: 3,
+  charRace: 'Wood Elf',
+  charExp: 1300,
+  charStr: 8,
+  charDex: 9,
+  charCon: 10,
+  charInt: 11,
+  charWis: 12,
+  charCha: 13,
+  charMaxHp: 30,
+  charAc: 14,
+  charSpells: 'moonfire',
+  charTraits: 'of the Moon',
+  charSkills: 'medicine',
+  charEquip: 'Staff'
+}])
 //    })
   .then((sheets) => {
     console.log(`${sheets.length} character sheets created!`);
