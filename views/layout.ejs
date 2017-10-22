@@ -10,8 +10,12 @@
 </head>
 <body>
   <%- include ./partials/_navbar %>
+
   <main>
   <%- body %>
 </main>
+<% for (const type in messages) { %>
+  <p class="alert alert-<%= type %>"><%= messages[type] %></p>
+<% } %>
 </body>
 </html>
