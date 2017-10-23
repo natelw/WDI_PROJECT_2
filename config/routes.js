@@ -9,7 +9,7 @@ const secureRoute = require('../lib/secureRoute');
 router.get('/', (req, res) => res.render('homepage'));
 
 router.route('/register')
-  .get(registration.new)
+  .get(secureRoute, registration.new)
   .post(registration.create);
 
 router.route('/login')

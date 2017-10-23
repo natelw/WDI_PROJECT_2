@@ -1,4 +1,5 @@
 const User = require('../models/user');
+
 function sessionNew(req, res) {
   res.render('session/new');
 }
