@@ -1,14 +1,20 @@
 <header>
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="/sheets/new">New Sheet</a></li>
+    <li class="divider"></li>
+    <li><a href="/sheets">All Sheets</a></li>
+  </ul>
   <div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper #311b92 deep-purple darken-4">
-      <a href="/" class="brand-logo">LAIR</a>
+    <nav>
+      <div class="nav-wrapper #311b92 deep-purple darken-4">
+        <a href="/" class="brand-logo">LAIR</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/sheets">Sheets</a></li>
-            <li><a href="/register">Register</a></li>
-            <li><a href="/login">Log in</a></li>
-            <li><a href='/logout'>Log Out</a></li>
-       </ul>
-     </div>
-   </nav>
-</header>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Sheets
+            <i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="/register">Register</a></li>
+          <li><a href="/login">Log in</a></li>
+          <li><a href='/logout'>Log Out</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
