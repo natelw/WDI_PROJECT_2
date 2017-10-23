@@ -1,5 +1,4 @@
-<div class="row">
-<div class="container col s7">
+<div class="container col s3">
 <form method="POST" action="/register">
   <div class="input-field col s12">
     <label for="userName">Username</label>
@@ -25,17 +24,11 @@
   <label for="passwordConfirmation">Password Confirmation</label>
   <input type="password" name="passwordConfirmation" id="passwordConfirmation" class="form-control">
 </div>
-<button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
+  <button class="btn btn-primary">Register</button>
 </form>
 <div>
 <% if (locals.message) { %>
   <p><%= message %></p>
 <% } %>
-</div>
-</div>
-<div class="col s5">
-right aligned cols
 </div>
 </div>
