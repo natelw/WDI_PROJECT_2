@@ -4,7 +4,7 @@ const sheetSchema = new mongoose.Schema({
   charName: { type: String, required: true },
   charClass: { type: String, required: true },
   charLevel: Number,
-  charRace: { type: String, required: true, unique: true},
+  charRace: { type: String, required: true },
   charExp: Number,
   charStr: Number,
   charDex: Number,
