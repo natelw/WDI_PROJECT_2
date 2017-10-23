@@ -1,16 +1,15 @@
 <h1>indexer</h1>
-
 <ul>
   <% sheets.forEach((sheet) => { %>
     <li>
-    <a href="/sheets/<%= sheet.id %>"><h3><%= sheet.charName %></h3></a>
+      <a href="/sheets/<%= sheet.id %>"><h3><%= sheet.charName %></h3></a>
       <h4><%= sheet.charClass %></h4>
       <p><%= sheet.charLevel %></p>
     </li>
-    <a href="/sheets/<%= sheet.id %>/edit">Edit</a>
-    <form action="/sheets/<%= sheet.id %>" method="POST">
-  <input type="hidden" name="_method" value="DELETE"/>
-  <button>Delete</button>
-</form>
+      <a href="/sheets/<%= sheet.id %>/edit">Edit</a>
+      <form action="/sheets/<%= sheet.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE"/>
+        <button>Delete</button>
+      </form>
   <% }); %>
 </ul>

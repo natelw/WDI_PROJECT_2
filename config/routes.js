@@ -3,13 +3,12 @@ const router  = express.Router();
 const registration  = require('../controllers/registration');
 const session       = require('../controllers/session');
 const sheets = require('../controllers/sheets');
-const Sheet = require('../models/sheet');
 const secureRoute = require('../lib/secureRoute');
 // A home route
 router.get('/', (req, res) => res.render('homepage'));
 
 router.route('/register')
-  .get(secureRoute, registration.new)
+  .get(registration.new)
   .post(registration.create);
 
 router.route('/login')
@@ -20,18 +19,18 @@ router.route('/logout')
   .get(session.delete);
 
 router.route('/sheets')
-  .get(sheets.index)
+  .get(secureRoute, sheets.index)
   .post(sheets.create);
 
 router.route('/sheets/new')
-  .get(sheets.new);
+  .get(secureRoute, sheets.new);
 
 router.route('/sheets/:id')
-  .get(sheets.show)
+  .get(secureRoute, sheets.show)
   .put(sheets.update)
   .delete(sheets.delete);
 
 router.route('/sheets/:id/edit')
-  .get(sheets.edit);
+  .get(secureRoute, sheets.edit);
 
 module.exports = router;

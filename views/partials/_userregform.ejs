@@ -1,34 +1,52 @@
-<div class="container col s3">
-<form method="POST" action="/register">
-  <div class="input-field col s12">
-    <label for="userName">Username</label>
-    <input type="text" name="userName" id="userName" class="form-control">
+
+<div class="bigbox">
+  <div class="row">
+    <div class="container col s8">
+      <form method="POST" action="/register">
+        <div class="input-field col s12">
+          <label for="userName">Username</label>
+          <input type="text" name="userName" id="userName" class="form-control">
+        </div>
+        <div class="input-field col s6">
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" id="firstName" class="form-control">
+        </div>
+        <div class="input-field col s6">
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" id="lastName" class="form-control">
+        </div>
+        <div class="input-field col s12">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" class="form-control">
+        </div>
+        <div class="input-field col s6">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" class="form-control">
+        </div>
+        <div class="input-field col s6">
+          <label for="passwordConfirmation">Password Confirmation</label>
+          <input type="password" name="passwordConfirmation" id="passwordConfirmation" class="form-control">
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+      <div>
+      <% if (locals.message) { %>
+        <p><%= message %></p>
+        <% } %>
+      </div>
+    </div>
+    <div class="card blue-grey darken-1 col s3">
+      <div class="card-content white-text">
+        <span class="card-title">Welcome to Lair!</span>
+        <p>Please register to gain full access to all of Lair's secrets.</p>
+      </div>
+      <img src="#" alt="big_logo_needed">
+
+    </div>
   </div>
-  <div class="input-field col s6">
-    <label for="firstName">First Name</label>
-    <input type="text" name="firstName" id="firstName" class="form-control">
-  </div>
-  <div class="input-field col s6">
-    <label for="lastName">Last Name</label>
-    <input type="text" name="lastName" id="lastName" class="form-control">
-  </div>
-  <div class="input-field col s12">
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email" class="form-control">
-  </div>
-  <div class="input-field col s6">
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" class="form-control">
-  </div>
-  <div class="input-field col s6">
-  <label for="passwordConfirmation">Password Confirmation</label>
-  <input type="password" name="passwordConfirmation" id="passwordConfirmation" class="form-control">
 </div>
-  <button class="btn btn-primary">Register</button>
-</form>
-<div>
-<% if (locals.message) { %>
-  <p><%= message %></p>
-<% } %>
+</div>
 </div>
 </div>
