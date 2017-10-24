@@ -15,6 +15,19 @@
 }
 
 body {
-    background-image: url("../src/images/stonefloor.jpg");
+    background-image: url("/images/stonefloor.jpg");
+    background-position: -100px -100px;
     background-color: white;
+}
+
+.card {
+  opacity: 0.7;
+
+}
+.tabs {
+  opacity: 0.7;
+}
+
+.container {
+  margin-bottom: 30px;
 }

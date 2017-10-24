@@ -35,6 +35,8 @@ function sheetsShow(req, res) {
 }
 
 function sheetsCreate(req, res) {
+  req.body.createdBy = req.user;
+
   Sheet
     .create(req.body)
     .then(() => {

@@ -6,8 +6,8 @@ mongoose.connect(dbUri, { useMongoClient: true });
 const User = require('../models/user');
 const Sheet = require('../models/sheet');
 
-User.collection.drop();
-
+ // User.collection.drop();
+Sheet.collection.drop();
 // User
 //   .create([{
 //     firstName: 'Nate',
@@ -43,7 +43,8 @@ Sheet.create([{
   charSpells: 'talk to animals',
   charTraits: 'beastmaster',
   charSkills: 'nature',
-  charEquip: 'longsword +1'
+  charEquip: 'longsword +1',
+  CreatedBy: 'Admin'
 },{
   charName: 'Moffat',
   charClass: 'Druid',
@@ -61,7 +62,8 @@ Sheet.create([{
   charSpells: 'moonfire',
   charTraits: 'of the Moon',
   charSkills: 'medicine',
-  charEquip: 'Staff'
+  charEquip: 'Staff',
+  createdBy: 'Admin'
 }])
 //    })
   .then((sheets) => {

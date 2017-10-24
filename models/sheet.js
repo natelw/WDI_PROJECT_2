@@ -18,7 +18,10 @@ const sheetSchema = new mongoose.Schema({
   charTraits: String,
   charSkills: String,
   charEquip: String,
-  charBio: String
+  charBio: String,
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
+
+
 }, {
   timestamps: true
 });
