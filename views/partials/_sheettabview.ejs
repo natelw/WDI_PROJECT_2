@@ -5,20 +5,36 @@
 
 
         <li class="tab col s3"><a href="#char1"><%= sheet.charName %></a></li>
-        <li class="tab col s3"><a href="#char2">name 2</a></li>
-        <li class="tab col s3"><a href="#char3">name 3</a></li>
-        <li class="tab col s3"><a href="#char4">name 4</a></li>
+        <li class="tab col s3"><a href="#char2">Equipment</a></li>
+        <li class="tab col s3"><a href="#char3">Spells</a></li>
+        <li class="tab col s3"><a href="#char4">Bio</a></li>
       </ul>
     </div>
     <div id="char1" class="col s12">
-      <%= sheet.charName %>
+      <h3><%= sheet.charName %></h3>
+      <br>
       <%= sheet.charClass %>
+      <br>
       <%= sheet.charLevel %>
+      <br>
       <%= sheet.charRace %>
+      <br>
+      <h5>Traits</h5>
+      <%= sheet.charTraits %>
+      <br>
+      <h5>Skills</h5>
+      <%= sheet.charSkills %>
     </div>
-    <div id="char2" class="col s12">Test 2</div>
-    <div id="char3" class="col s12">Test 3</div>
-    <div id="char4" class="col s12">Test 4</div>
+    <div id="char2" class="col s12">
+      <h5>Equipment</h5>
+      <%= sheet.charEquip %>
+    </div>
+    <div id="char3" class="col s12">
+      <h5>Spells</h5>
+    <%= sheet.charSpells %></div>
+    <div id="char4" class="col s12">
+      <h5>Character Bio and History</h5>
+    <%= sheet.charBio %></div>
   </div>
 </div>
 <div class="fixed-action-btn">

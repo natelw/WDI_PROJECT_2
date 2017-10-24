@@ -17,7 +17,8 @@ const sheetSchema = new mongoose.Schema({
   charSpells: String,
   charTraits: String,
   charSkills: String,
-  charEquip: String
+  charEquip: String,
+  charBio: String
 }, {
   timestamps: true
 });
