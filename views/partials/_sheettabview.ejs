@@ -18,20 +18,27 @@
       <%= sheet.charRace %>
       <br>
       <h5>Traits</h5>
-      <%= sheet.charTraits %>
+      <ul>
+          <% sheet.charTraits.split(',').forEach((word) => { %>
+            <li><%= word %></li>
+          <% }) %>
+        </ul>
+
       <br>
       <h5>Skills</h5>
       <%= sheet.charSkills %>
     </div>
     <div id="char2" class="col s12 white-text <%= sheet.class %>">
       <h5>Equipment</h5>
-      <%= sheet.charEquip %>
-    </div>
+      <ul>
+        <% sheet.charEquip.split(',').forEach((word) => { %>
+          <li><%= word %></li>
+        <% }) %>
+      </ul>    </div>
     <div id="char3" class="col s12 white-text">
       <h5>Spells</h5>
-      <%= sheet.charSpells %>
       <ul>
-        <% sheet.charSpells.split(' ').forEach((word) => { %>
+        <% sheet.charSpells.split(',').forEach((word) => { %>
           <li><%= word %></li>
         <% }) %>
       </ul>
@@ -49,11 +56,15 @@
     <li>
       <form action="/sheets/<%= sheet.id %>" method="POST">
         <input type="hidden" name="_method" value="DELETE"/>
-        <button class="btn-floating red"><i class="material-icons">delete_forever</i></button>
+        <button class="btn-floating red darken-2"><i class="material-icons">delete_forever</i></button>
       </form>
     </li>
-        <li><a class="btn-floating yellow darken-1" href="/sheets/<%= sheet.id %>/edit">
+    <li><a class="btn-floating yellow darken-4" href="/sheets/new">
+        <i class="material-icons">library_add</i></a></li>
+        <li><a class="btn-floating yellow darken-3" href="/sheets/<%= sheet.id %>/edit">
       <i class="material-icons">edit</i></a></li>
-    <li><a class="btn-floating blue" href="/sheets" ><i class="material-icons">arrow_back</i></a></li>
+    <li><a class="btn-floating deep-orange" href="/sheets" ><i class="material-icons">grid_on</i></a></li>
+    <li><a class="btn-floating black" href="/" ><i class="material-icons">home</i></a></li>
+
     </ul>
   </div>
