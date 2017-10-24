@@ -1,0 +1,40 @@
+<div class="row">
+  <% sheets.forEach((sheet) => { %>
+
+  <div class="col s12 m6 l3">
+    <div class="card blue-grey">
+      <div class="card-image waves-effect waves-block waves-light">
+<div class="row s3">
+
+          <div class="col s4 deep-purple darken-5 white-text">STR <%= sheet.charStr %></div>
+          <div class="col s4 deep-purple darken-3 white-text">DEX <%= sheet.charDex %></div>
+          <div class="col s4 deep-purple darken-1 white-text ">CON <%= sheet.charCon %></div>
+
+
+          <div class="col s4 deep-purple darken-4 white-text">INT <%= sheet.charInt %></div>
+          <div class="col s4 deep-purple darken-2 white-text">WIS <%= sheet.charWis %></div>
+          <div class="col s4 deep-purple  white-text">CHA <%= sheet.charDex %></div>
+        </div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      <div class="card-content">
+        <span class="card-title activator white-text text-darken-4"><%= sheet.charName %></span>
+        <p><a href="#"><%= sheet.charClass %></a></p>
+        <div class="card-action">
+              <a href="/sheets/<%= sheet.id %>">View</a>
+              <a href="/sheets/<%= sheet.id %>/edit">Edit</a>
+              <a href="#">Delete</a>
+
+            </div>
+        </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Level <%= sheet.charLevel %> /
+      <%= sheet.charExp %> exp <i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once cdivcked on.
+      <a href="/sheets/<%= sheet.id %>">the show page</a></p>
+    </div>
+  </div>
+</div>
+<% }); %>
+
+</div>
