@@ -50,6 +50,7 @@ app.use((req, res, next) => {
     .exec()
     .then(user=> {
       req.session.userId = user._id;
+      req.user = user;
       res.locals.user = user;
       res.locals.isLoggedIn = true;
 

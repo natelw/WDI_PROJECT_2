@@ -31,3 +31,28 @@ body {
 .container {
   margin-bottom: 30px;
 }
+
+label {
+  color: white;
+}
+
+h1 {
+  color:white;
+  font-size: 30px;
+  text-align: left;
+  margin-left: 60px;
+}
+.spaced {
+  height: 350px;
+}
+.sheetDelete {
+  background: none;
+  border: none;
+  text-transform: uppercase;
+}
+.sheetDeleteForm {
+  display: inline;
+}
+.hero {
+  background: green;
+}

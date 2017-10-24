@@ -3,11 +3,9 @@ const sheets = require('../controllers/sheets');
 const Sheet = require('../models/sheet');
 const secureRoute = require('../lib/secureRoute');
 
-
-
 function sheetsIndex(req, res) {
   Sheet
-    .find()
+    .find({ createdBy: req.user })
     .exec()
     .then(sheets => {
       res.render('sheets/index', { sheets });
