@@ -14,7 +14,7 @@ function sessionCreate(req, res) {
       req.flash('success',  'You have logged in!');
 
       req.session.userId = user.id;
-
+      req.session.isAuthenticated = true;
       return res.redirect('/');
     });
 }
