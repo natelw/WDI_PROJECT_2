@@ -6,26 +6,26 @@ mongoose.connect(dbUri, { useMongoClient: true });
 const User = require('../models/user');
 const Sheet = require('../models/sheet');
 
- // User.collection.drop();
+  User.collection.drop();
 Sheet.collection.drop();
-// User
-//   .create([{
-//     firstName: 'Nate',
-//     lastName: 'Welfare',
-//     email: 'nate@nate.com',
-//     userName: 'nafter',
-//     password: 'password'
-//   },{
-//     firstName: 'Dave',
-//     lastName: 'Bloggs',
-//     email: 'dave@blogster.com',
-//     userName: 'bloggy',
-//     password: 'password'
-//   }])
-//   .then((users) => {
-//     console.log(`${users.length} users created!`);
-//
-//     return
+ User
+  .create([{
+    firstName: 'Nate',
+    lastName: 'Welfare',
+    email: 'nate@nate.com',
+    userName: 'nafter',
+    password: 'password'
+  },{
+    firstName: 'Dave',
+    lastName: 'Bloggs',
+    email: 'dave@blogster.com',
+    userName: 'bloggy',
+    password: 'password'
+  }])
+  .then((users) => {
+    console.log(`${users.length} users created!`);
+
+
 Sheet.create([{
   charName: 'Blath',
   charClass: 'Ranger',
