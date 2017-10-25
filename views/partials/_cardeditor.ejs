@@ -98,16 +98,16 @@
     <li>
       <form action="/sheets/<%= sheet.id %>" method="POST">
         <input type="hidden" name="_method" value="DELETE"/>
-        <button class="btn-floating red"><i class="material-icons">delete_forever</i></button>
+        <button class="btn-floating red tooltipped" data-position="left" data-delay="500" data-tooltip="Delete Forever"><i class="material-icons">delete_forever</i></button>
       </form>
     </li>
 
-      <li><a class="btn-floating yellow darken-4" href="/sheets/new">
+      <li><a class="btn-floating yellow darken-4 tooltipped" href="/sheets/new" data-position="left" data-delay="500" data-tooltip="New Character Sheet">
         <i class="material-icons">library_add</i></a></li>
-    <li><a class="btn-floating amber" href="/sheets/<%= sheet.id %>">
+    <li><a class="btn-floating amber tooltipped" href="/sheets/<%= sheet.id %>" data-position="left" data-delay="500" data-tooltip="Full Character Sheet">
       <i class="material-icons">pageview</i></a></li>
-    <li><a class="btn-floating deep-orange" href="/sheets" ><i class="material-icons">grid_on</i></a></li>
-    <li><a class="btn-floating black" href="/" ><i class="material-icons">home</i></a></li>
+    <li><a class="btn-floating deep-orange tooltipped" href="/sheets" data-position="left" data-delay="500" data-tooltip="Character Sheet Viewer"><i class="material-icons">grid_on</i></a></li>
+    <li><a class="btn-floating black tooltipped" href="/" data-position="left" data-delay="500" data-tooltip="Home"><i class="material-icons">home</i></a></li>
 
   </ul>
 </div>
